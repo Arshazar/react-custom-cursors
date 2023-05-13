@@ -1,0 +1,55 @@
+/* cursor styles */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  will-change: width, height, transform, border;
+  z-index: 999;
+  pointer-events: none;
+  /* Cursor animations */
+  .none {
+    animation: none;
+  }
+  .spin {
+    animation: spin infinite 5s linear;
+  }
+  .beat {
+    animation: beat infinite 0.8s ease;
+  }
+}
+/* dot style */
+.dot {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  pointer-events: none;
+}
+/* keyframes */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes beat {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
