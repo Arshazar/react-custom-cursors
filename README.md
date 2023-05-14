@@ -31,7 +31,7 @@ pnpm add react-custom-hooks
 
 ## Cursor
 
-As Cursor component uses react hooks under the hood, you've got to use it inside a funtion component.
+Since Cursor component uses react hooks under the hood, you've got to use it inside a funtion component.
 
 usage: `<Cursor {...props} />`
 
@@ -71,7 +71,7 @@ export default App;
 
 ## Website
 
-[Website]("https://react-custom-cursors.netlify.app")
+[Website](https://react-custom-cursors.netlify.app)
 
 ## Feedback
 
