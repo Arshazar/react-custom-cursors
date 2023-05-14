@@ -8,7 +8,7 @@ interface PositionType {
   x: number | null;
   y: number | null;
 }
-interface PropsType {
+export interface PropsType {
   hasDot?: boolean;
   dotColor?: string;
   hasCursor?: boolean;
@@ -29,7 +29,7 @@ interface PropsType {
     | "star"
     | "frame"
     | "cross"
-    | "heart"
+    // | "heart"
     | "rhombus";
 }
 
@@ -139,11 +139,11 @@ const Cursor: React.FC<PropsType> = ({
         return {
           clipPath: clipPaths().cross,
         };
-      case "heart":
-        return {
-          clipPath: clipPaths(cursorWidth).heart,
-          transform: `translate(-50%, - 50%) scale(${cursorWidth / 24})`,
-        };
+      // case "heart":
+      //   return {
+      //     clipPath: clipPaths(cursorWidth).heart,
+      //     transform: `translate(-50%, - 50%) scale(${cursorWidth / 24})`,
+      //   };
       case "rhombus":
         return {
           clipPath: clipPaths().rhombus,
