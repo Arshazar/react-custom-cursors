@@ -42,8 +42,8 @@ import { Cursor } from "react-custom-cursors";
 import "react-custom-cursors/dist/index.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  /* your codes
+   */
   return (
     <div className="app">
       <Cursor />
