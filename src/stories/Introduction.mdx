@@ -1,6 +1,7 @@
 import { Meta } from "@storybook/blocks";
 import Code from "./assets/code-brackets.svg";
-import Repo from "./assets/repo.svg";
+import Github from "./assets/github.svg";
+import Npm from "./assets/npm.svg";
 
 <Meta title="Introduction" />
 
@@ -89,11 +90,22 @@ import Repo from "./assets/repo.svg";
       font-size: 11px;
       line-height: 12px;
       font-weight: 700;
-      background: #E7FDD8;
-      color: #66BF3C;
       padding: 4px 12px;
       margin-right: 10px;
       vertical-align: top;
+    }
+
+    .yarn {
+      background-color: #80d9ff;
+      color: #007db3;
+    }
+    .npm {
+      background-color: #ff6e6e;
+      color: #cc0000;
+    }
+    .pnpm {
+      background-color: #fff25e;
+      color: #e8b600;
     }
 
     .tip-wrapper {
@@ -112,22 +124,27 @@ import Repo from "./assets/repo.svg";
 
 # Welcome to React Custom Cursors
 
-React Custom Cursors provides a **fully customisable cursor** for your project.
+### Customisable cursors for React
+
+React Custom Cursors provides a **fully customisable cursor** for your React project.
 
 Browse examples in the sidebar to figure out how it works.
 
 <div className="subheading">Installation</div>
-
+<span>
+  You can easily install the React Custom Cursors package with either npm or
+  yarn or pnpm:
+</span>
 <div className="tip-wrapper">
-  <span className="tip">npm</span>
+  <span className="tip npm">npm</span>
   <code>npm i react-custom-cursors</code>
 </div>
 <div className="tip-wrapper">
-  <span className="tip">yarn</span>
+  <span className="tip yarn">yarn</span>
   <code>yarn add react-custom-cursors</code>
 </div>
 <div className="tip-wrapper">
-  <span className="tip">pnpm</span>
+  <span className="tip pnpm">pnpm</span>
   <code>pnpm add react-custom-cursors</code>
 </div>
 
@@ -139,7 +156,7 @@ Browse examples in the sidebar to figure out how it works.
     href="https://github.com/arshazar/react-custom-cursors"
     target="_blank"
   >
-    <img src={Code} alt="code" />
+    <img src={Github} alt="github" />
     <span>
       <strong>GitHub project</strong>
       View the source and add issues
@@ -150,10 +167,10 @@ Browse examples in the sidebar to figure out how it works.
     href="https://npmjs.com/package/react-custom-cursors"
     target="_blank"
   >
-    <img src={Repo} alt="repo" />
+    <img src={Npm} alt="npm" />
     <span>
-      <strong>npm page</strong>
-      npm page of the module
+      <strong>npm package</strong>
+      The page of the npm module
     </span>
   </a>
 </div>
