@@ -8,7 +8,7 @@ export interface PropsType {
     speed?: "slow" | "medium" | "fast";
     animation?: "none" | "spin" | "beat";
     shape?: "round" | "triangle" | "square" | "pentagon" | "hexagon" | "heptagon" | "octagon" | "nonagon" | "decagon" | "star" | "frame" | "cross" | "rhombus";
-    hoveringAnimation: "none" | "magnify";
+    hoveringAnimation?: "none" | "magnify";
 }
 declare const Cursor: React.FC<PropsType>;
 export { Cursor };

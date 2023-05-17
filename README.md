@@ -9,19 +9,19 @@ You can simply install React Custom Cursors either by yarn, npm or pnpm.
 #### yarn
 
 ```bash
-yarn add react-custom-hooks
+yarn add react-custom-cursors
 ```
 
 #### npm
 
 ```bash
-npm i react-custom-hooks
+npm i react-custom-cursors
 ```
 
 #### pnpm
 
 ```bash
-pnpm add react-custom-hooks
+pnpm add react-custom-cursors
 ```
 
 **Table of Contents**
