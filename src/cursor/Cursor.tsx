@@ -12,11 +12,11 @@ export interface PropsType {
   hasDot?: boolean;
   dotColor?: string;
   hasCursor?: boolean;
-  cursorColor?: string;
-  cursorSize?: "xs" | "sm" | "md" | "lg" | "xl";
-  cursorSpeed?: "slow" | "medium" | "fast";
-  cursorAnimation?: "none" | "spin" | "beat";
-  cursorShape?:
+  color?: string;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  speed?: "slow" | "medium" | "fast";
+  animation?: "none" | "spin" | "beat";
+  shape?:
     | "round"
     | "triangle"
     | "square"
@@ -31,22 +31,25 @@ export interface PropsType {
     | "cross"
     // | "heart"
     | "rhombus";
+  hoveringAnimation?: "none" | "magnify";
 }
 
 const Cursor: React.FC<PropsType> = ({
   hasDot = false,
   dotColor = "#fff",
   hasCursor = true,
-  cursorColor = "#f00",
-  cursorSize = "md",
-  cursorSpeed = "medium",
-  cursorShape = "round",
-  cursorAnimation = "none",
+  color = "#f00",
+  size = "md",
+  speed = "medium",
+  shape = "round",
+  animation = "none",
+  hoveringAnimation = "none",
 }) => {
   const [position, setPosition] = useState<PositionType>({
     x: null,
     y: null,
   });
+  const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const cursorWidth = {
     xs: 15,
@@ -54,17 +57,25 @@ const Cursor: React.FC<PropsType> = ({
     md: 30,
     lg: 40,
     xl: 50,
-  }[cursorSize];
+  }[size];
   const cursorDuration = {
     slow: "200ms",
     medium: "100ms",
     fast: "70ms",
-  }[cursorSpeed];
+  }[speed];
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       const { clientX, clientY } = e;
       setPosition({ x: clientX, y: clientY });
+
+      const hoveredElement = document.elementFromPoint(clientX, clientY);
+      if (hoveredElement) {
+        const isLink =
+          hoveredElement instanceof HTMLAnchorElement ||
+          hoveredElement instanceof HTMLButtonElement;
+        setIsHovering(isLink);
+      }
     };
 
     document.addEventListener("mousemove", handler);
@@ -79,11 +90,11 @@ const Cursor: React.FC<PropsType> = ({
     left: `${position.x}px`,
     top: `${position.y}px`,
     transitionDuration: cursorDuration,
-    backgroundColor: cursorColor,
+    backgroundColor: color,
     opacity: 0.5,
   };
   const cursorShapeStyle = () => {
-    switch (cursorShape) {
+    switch (shape) {
       case "round":
         return {
           borderRadius: "100%",
@@ -97,7 +108,7 @@ const Cursor: React.FC<PropsType> = ({
           borderWidth: `0 ${cursorWidth / 2}px ${
             (cursorWidth * Math.sqrt(3)) / 2
           }px`,
-          borderColor: `transparent transparent ${cursorColor}`,
+          borderColor: `transparent transparent ${color}`,
         };
       case "square":
         return {
@@ -157,7 +168,13 @@ const Cursor: React.FC<PropsType> = ({
     <>
       {hasCursor && (
         <div
-          className={cn(s["cursor"], s[cursorAnimation])}
+          className={cn(
+            s["cursor"],
+            s[animation],
+            isHovering &&
+              hoveringAnimation !== "none" &&
+              s[`hovering-${hoveringAnimation}`]
+          )}
           style={{ ...cursorStyle, ...cursorShapeStyle() }}
         />
       )}

@@ -31,7 +31,7 @@ pnpm add react-custom-hooks
 
 ## Cursor
 
-Since Cursor component uses react hooks under the hood, you've got to use it inside a funtion component.
+Since Cursor component uses react hooks under the hood, you've got to use it inside a function component.
 
 usage: `<Cursor {...props} />`
 
@@ -56,16 +56,17 @@ export default App;
 
 ## API
 
-| Prop              | Type      | Default  | Description                                                                                                                            |
-| :---------------- | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
-| `hasCursor`       | `boolean` | true     | If true, cursor will be available                                                                                                      |
-| `cursorColor`     | `string`  | "#f00"   | It accepts all supported values by css                                                                                                 |
-| `cursorSize`      | `string`  | "md"     | "xs", "sm", "md", "lg", xl"                                                                                                            |
-| `cursorSpeed`     | `string`  | "medium" | "slow", "medium", "fast"                                                                                                               |
-| `cursorShape`     | `string`  | "round"  | "round", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon", "star", "frame", "cross", "rhombus" |
-| `cursorAnimation` | `string`  | "none"   | "none", "spin", "beat"                                                                                                                 |
-| `hasDot`          | `boolean` | false    | if true, dot will be available                                                                                                         |
-| `dotColor`        | `string`  | "#fff"   | It accepts all supported values by css                                                                                                 |
+| Prop                | Type      | Default  | Description                                                                                                                            |
+| :------------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| `hasCursor`         | `boolean` | true     | If true, cursor will be available                                                                                                      |
+| `color`             | `string`  | "#f00"   | It accepts all supported values by css                                                                                                 |
+| `size`              | `string`  | "md"     | "xs", "sm", "md", "lg", xl"                                                                                                            |
+| `speed`             | `string`  | "medium" | "slow", "medium", "fast"                                                                                                               |
+| `shape`             | `string`  | "round"  | "round", "triangle", "square", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon", "star", "frame", "cross", "rhombus" |
+| `animation`         | `string`  | "none"   | "none", "spin", "beat"                                                                                                                 |
+| `hoveringAnimation` | `string`  | "none"   | "none", "magnify"; won't work unless animation is set to "none".                                                                       |
+| `hasDot`            | `boolean` | false    | if true, dot will be available                                                                                                         |
+| `dotColor`          | `string`  | "#fff"   | It accepts all supported values by css                                                                                                 |
 
 ---
 

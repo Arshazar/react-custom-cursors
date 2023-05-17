@@ -21,6 +21,15 @@
 .beat {
   animation: beat infinite 0.8s ease;
 }
+/* hovering animation */
+.hovering {
+  &-none {
+    transform: none;
+  }
+  &-magnify {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
 /* dot style */
 .dot {
   position: fixed;
