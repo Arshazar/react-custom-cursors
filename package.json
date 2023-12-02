@@ -1,6 +1,6 @@
 {
   "name": "react-custom-cursors",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Custom cursors for react",
   "homepage": "https://react-custom-cursors.netlify.app",
   "main": "dist/index.js",
