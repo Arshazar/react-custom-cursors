@@ -93,6 +93,7 @@ const Cursor: React.FC<PropsType> = ({
 
   const cursorStyle = {
     width: `${cursorWidth}px`,
+    height: `${cursorWidth}px`,
     left: `${position.x}px`,
     top: `${position.y}px`,
     transitionDuration: cursorDuration,
