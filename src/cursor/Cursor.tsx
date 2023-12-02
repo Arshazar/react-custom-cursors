@@ -33,6 +33,8 @@ export interface PropsType {
     // | "heart"
     | "rhombus";
   hoveringAnimation?: "none" | "magnify";
+  zIndex?: number;
+  mixBlendMode?: boolean;
 }
 
 const Cursor: React.FC<PropsType> = ({
@@ -46,6 +48,8 @@ const Cursor: React.FC<PropsType> = ({
   shape = "round",
   animation = "none",
   hoveringAnimation = "none",
+  zIndex = 999,
+  mixBlendMode = true,
 }) => {
   const [position, setPosition] = useState<PositionType>({
     x: null,
@@ -95,9 +99,11 @@ const Cursor: React.FC<PropsType> = ({
     backgroundColor: isHollow ? "transparent" : color,
     opacity: 0.5,
     border: `1px solid ${color}`,
+    zIndex,
+    "mix-blend-mode": mixBlendMode ? "difference" : "normal",
   };
   const cursorShapeStyle = () => {
-    switch (shape) {
+    switch (isHollow ? "round" : shape) {
       case "round":
         return {
           borderRadius: "100%",
@@ -188,6 +194,8 @@ const Cursor: React.FC<PropsType> = ({
             left: `${position.x}px`,
             top: `${position.y}px`,
             backgroundColor: dotColor,
+            zIndex,
+            mixBlendMode: mixBlendMode ? "difference" : "normal",
           }}
         />
       )}

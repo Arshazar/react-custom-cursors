@@ -8,7 +8,6 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   will-change: width, height, transform, border;
-  z-index: 999;
   pointer-events: none;
 }
 /* Cursor animations */
@@ -39,7 +38,6 @@
   height: 8px;
   border-radius: 100%;
   transform: translate(-50%, -50%);
-  z-index: 999;
   pointer-events: none;
 }
 /* keyframes */

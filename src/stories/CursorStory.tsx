@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Cursor as CursorComponent, PropsType } from "../cursor";
 
 const Cursor: React.FC<PropsType> = ({
@@ -12,6 +13,8 @@ const Cursor: React.FC<PropsType> = ({
   shape,
   animation,
   hoveringAnimation,
+  zIndex,
+  mixBlendMode,
 }: PropsType) => {
   return (
     <div
@@ -39,6 +42,7 @@ const Cursor: React.FC<PropsType> = ({
       <a href="#">Hover me!</a>
       <CursorComponent
         hasDot={hasDot}
+        zIndex={zIndex}
         isHollow={isHollow}
         dotColor={dotColor}
         hasCursor={hasCursor}
@@ -48,6 +52,7 @@ const Cursor: React.FC<PropsType> = ({
         shape={shape}
         animation={animation}
         hoveringAnimation={hoveringAnimation}
+        mixBlendMode={mixBlendMode}
       />
     </div>
   );
