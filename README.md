@@ -67,6 +67,7 @@ export default App;
 | `hoveringAnimation` | `string`  | "none"   | "none", "magnify"; won't work unless animation is set to "none".                                                                       |
 | `hasDot`            | `boolean` | false    | if true, dot will be available                                                                                                         |
 | `dotColor`          | `string`  | "#fff"   | It accepts all supported values by css                                                                                                 |
+| `isHollow`          | `boolean` | false    | if true, the cursor would be hollow                                                                                                    |
 
 ---
 

@@ -3,6 +3,7 @@ import { Cursor as CursorComponent, PropsType } from "../cursor";
 
 const Cursor: React.FC<PropsType> = ({
   hasDot,
+  isHollow,
   dotColor,
   hasCursor,
   color,
@@ -38,6 +39,7 @@ const Cursor: React.FC<PropsType> = ({
       <a href="#">Hover me!</a>
       <CursorComponent
         hasDot={hasDot}
+        isHollow={isHollow}
         dotColor={dotColor}
         hasCursor={hasCursor}
         color={color}

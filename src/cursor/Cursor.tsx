@@ -10,6 +10,7 @@ interface PositionType {
 }
 export interface PropsType {
   hasDot?: boolean;
+  isHollow?: boolean;
   dotColor?: string;
   hasCursor?: boolean;
   color?: string;
@@ -36,6 +37,7 @@ export interface PropsType {
 
 const Cursor: React.FC<PropsType> = ({
   hasDot = false,
+  isHollow = false,
   dotColor = "#fff",
   hasCursor = true,
   color = "#f00",
@@ -52,16 +54,16 @@ const Cursor: React.FC<PropsType> = ({
   const [isHovering, setIsHovering] = useState<boolean>(false);
 
   const cursorWidth = {
-    xs: 15,
-    sm: 20,
-    md: 30,
-    lg: 40,
+    xs: 8,
+    sm: 12,
+    md: 20,
+    lg: 35,
     xl: 50,
   }[size];
   const cursorDuration = {
-    slow: "200ms",
-    medium: "100ms",
-    fast: "70ms",
+    slow: "450ms",
+    medium: "300ms",
+    fast: "100ms",
   }[speed];
 
   useEffect(() => {
@@ -90,8 +92,9 @@ const Cursor: React.FC<PropsType> = ({
     left: `${position.x}px`,
     top: `${position.y}px`,
     transitionDuration: cursorDuration,
-    backgroundColor: color,
+    backgroundColor: isHollow ? "transparent" : color,
     opacity: 0.5,
+    border: `1px solid ${color}`,
   };
   const cursorShapeStyle = () => {
     switch (shape) {
